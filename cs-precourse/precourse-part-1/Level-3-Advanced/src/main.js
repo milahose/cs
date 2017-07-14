@@ -5,7 +5,9 @@
 // forEach(['a','b','c'], callback); → prints a,0,[1,2,3] b,1,[1,2,3] c,2,[1,2,3]
 // For each element in the array, the callback we passed is called. The callback can be customized, but in the above example, the callback prints out the element, index, and entire array.
 function forEach(array, callback) {
-
+	for (var i = 0; i < array.length; i++) {
+		callback(array[i], i, array);
+	}
 }
 
 // Creates an array of values by running each element in collection through callback
@@ -16,7 +18,13 @@ function forEach(array, callback) {
 // }); -> [3,6,9]
 // BONUS: use the forEach method you use to create map
 function map(array, callback) {
+	var newArr = [];
 
+	forEach(array, function(el) {
+    newArr.push(callback(el))
+	});
+  
+  return newArr;
 }
 
 // Iterates over elements of collection, returning an Array of all elements callback returns truthy for.
@@ -27,7 +35,15 @@ function map(array, callback) {
 //  return element % 2 !== 0;
 // }); → [1,3]
 function filter(collection, callback) {
+	var newArr = [];
 
+	forEach(collection, function(el, i, col) {
+    if (callback(el, i, col)) {
+    	newArr.push(el);
+    }
+	});
+  
+  return newArr;	
 }
 
 // Removes all elements from array that callback returns truthy for and returning a collection of elements that did not pass the truthy test.
@@ -36,11 +52,27 @@ function filter(collection, callback) {
 //  return element % 2 === 0;
 // }); → [1,3]
 // reject({a:1, b:2, c:3, d:4}, function(value, key, collection) {
-//  return element % 2 !== 0;
+//  return value % 2 !== 0;
 // }); → {b:2, d:4}
 // Challenge: use filter
 function reject(collection, callback) {
+	if (Array.isArray(collection)) {
+		return filter(collection, function(element, index, collection) {
+			if (!callback(element, index, collection)) {
+				return true;
+			}
+		});
+	} else {
+		var newObj = {};
 
+		for (var key in collection) {
+		  if (!callback(collection[key])) {
+		    newObj[key] = collection[key];
+		  }
+		}
+
+		return newObj;
+	}
 }
 
 // Creates an array without duplicate values from the inputted array.
@@ -48,7 +80,9 @@ function reject(collection, callback) {
 // uniq([1,2,1]); → [1,2]
 function uniq(array) {
 	//CODE HERE
-
+	return array.filter(function(el, index, arr) {
+    return arr.indexOf(el) === index;
+	}); 
 }
 
 // Gets the index at which the first occurrence of value is found in array
@@ -59,14 +93,32 @@ function uniq(array) {
 function indexOf(array, value) {
 	//CODE HERE
 
-}
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] === value) {
+			return i;
+		}
+	}
 
+	return -1;
+}
 
 // Returns a function that is restricted to invoking func once.
 // Repeat calls to the function return the value of the first call.
 function once(func) {
 	//CODE HERE
+	var ran;
+  var result;
 
+  return function() {
+    if (ran) {
+      return result;
+    }
+    ran = true;
+    result = func.apply(this, arguments);
+
+    func = null;
+    return result;
+  }
 }
 
 // Reduces collection to a value which is the accumulated result of running each element in collection through iteratee, where each successive invocation is supplied the return value of the previous. If accumulator is not provided the first element of collection is used as the initial value.
@@ -78,8 +130,20 @@ function once(func) {
 //  return stored + current;
 // },1); → 4
 function reduce(array, callback, start) {
+  var accumulator = start || 0;
+  
+  if (!start && callback(accumulator, array[0]) < 0) {
+  	accumulator = array[0] * 2;
+  }
 
+  array.forEach(function(el, index, arr) {
+    accumulator = callback(accumulator, el);
+  });
+
+  return accumulator;
 }
+
+// [1, 2, 3]
 
 // Takes an array and a function as arguments.
 // Returns true if the function produces true when each array element is passed to it.
@@ -92,18 +156,33 @@ function reduce(array, callback, start) {
 // });  -> false
 // BONUS: use reduce in your answer
 function every(array, func) {
-	//CODE HERE
-
+  return array.reduce(function(acc, curr) {
+		if (!func(curr)) {
+		  acc = false;
+		}
+		return acc;
+  }, true); 
 }
 
 // Flattens a nested array.
 // flatten([1, [2, 3, [4]]]); → [1, 2, 3, [4]]
 function flatten(array) {
-
+	return [].concat.apply([], array);
 }
 
 // Recursively flattens a nested array.
 // flattenDeep([1, [2, 3, [4]]]); → [1, 2, 3, 4]
 function flattenDeep(array) {
-
+  var flattened = []; 
+  var flattening = function(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0; i < arr.length; i++) {
+        flattening(arr[i]); 
+      }
+    } else {
+      flattened.push(arr); 
+    }
+  }
+  flattening(array);
+  return flattened;
 }

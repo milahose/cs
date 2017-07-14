@@ -3,7 +3,9 @@
 // ex: returnOdds([1,2,3,4,5,6,7]); -> [1,3,5,7]
 function returnOdds(array) {
 	//CODE HERE
-
+	return array.filter(function(el) {
+		return el % 2 === 1;
+	});
 }
 
 
@@ -12,7 +14,9 @@ function returnOdds(array) {
 // ex: returnEvent([1,2,3,4,5,6,7]); -> [2,4,6]
 function returnEvens(array) {
 	//CODE HERE
-
+	return array.filter(function(el) {
+		return el % 2 === 0;
+	});
 }
 
 
@@ -20,7 +24,9 @@ function returnEvens(array) {
 // ex: findMax([1,25,6,3]); -> 25
 function findMax(array) {
 	//CODE HERE
-
+	return array.reduce(function(acc, curr) {
+		return acc > curr ? acc : curr;
+	}, 0);
 }
 
 /**
@@ -28,7 +34,7 @@ function findMax(array) {
  * trim(' hello '); -> 'hello'
  */
 function trim(string) {
-
+	return string.trim();
 }
 
 // returns an empty array object. this object should have the following methods:
@@ -39,5 +45,11 @@ function trim(string) {
 // the goal of this problem is to reverse engineer what array methods are actually doing and return an object that has those methods
 function createArray() {
 	//CODE HERE
-
+	return {
+		array: [],
+		push: function(el) { return this.array.push(el)}, 
+		pop: function(el) { return this.array.pop(el)},
+		shift: function(el) { return this.array.shift(el)}, 
+		unshift: function(el) { return this.array.unshift(el)},
+	}
 }
