@@ -1,0 +1,198 @@
+@import url('styles/normalize.css');
+
+/*
+==========================
+			Global Styles
+==========================
+*/
+
+* { box-sizing: border-box; }
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	background-color: red;
+	background: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png') top 200px center no-repeat;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, .75);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* 
+============================
+			Header Styles
+============================
+*/
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin-right: 30px;
+}
+
+header ul, 
+footer ul {
+	list-style-type: none;	
+}
+
+header ul li, 
+footer ul li {
+	display: inline-block;
+}
+
+header ul li {
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.app-icon {
+	padding: 4px 5px;
+}
+
+.sign-in {
+	border: 1px solid #4285f4;
+	border-color: transparent;
+	font-weight: bold;
+	background: #4285f4;
+	outline: none;
+	padding: 0 12px;
+	border-radius: 2px;
+	margin-left: 4px;
+}
+
+.sign-in a {
+	text-decoration: none;
+	cursor: default;
+	color: #fff;
+	line-height: 28px;
+}
+
+/* 
+============================
+				Main Styles
+============================
+*/
+
+label {
+	display: none;
+}
+
+input {
+	display: block;
+	margin: 318px auto 30px auto;
+	padding: 18px;
+	height: 45px;
+	width: 580px;
+	font-size: 16px;
+	line-height: 26px;
+	background-image:url(../img/google-voice-search-icon.png); 
+	background-repeat: no-repeat; 
+	background-position: 97%;
+	border: 1px solid #e8e8e8;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.12);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+input:focus {
+	outline: none;
+}
+
+input:hover, 
+input:focus {
+	 box-shadow: 0 2px 2px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.15);
+}
+
+.btn {
+	text-align: center;
+}
+
+.serch {
+	padding-right: 5px;
+}
+
+.lucky {
+	padding-left: 5px;
+}
+
+.lucky, 
+.search {
+	display: inline-block;
+}
+
+.lucky a, 
+.search a {
+	color: #757575;
+	font-size: 13px;
+	background-color: #f2f2f2;
+	border: 1px solid rgba(0, 0, 0, 0.01);
+	border-radius: 2px;
+	font-weight: bold;
+	display: inline-block;
+	padding: 10px 16px;
+	cursor: default;
+}
+
+.lucky a:hover, 
+.search a:hover {
+	color: #000;
+	border: 1px solid #dcdcdc;
+	text-decoration: none;
+}
+
+/* 
+============================
+			Footer Styles
+============================
+*/
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%	;
+	background-color: #f2f2f2;
+	border-top: 1px solid #e4e4e4;
+	padding: 12px 0 13px 0;
+}
+
+footer div {
+	display: inline-block;
+}
+
+footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+footer a {
+	color: #666;
+	padding: ;
+}
+
+.footer-left {
+	float: left;
+	margin-left: 30px;
+}
+
+.footer-left a {
+	padding-right: 26px;
+}
+
+.footer-right {
+	float: right;
+	margin-right: 30px;
+}
+
+.footer-right a {
+	padding-left: 26px;
+}
+
+
+
