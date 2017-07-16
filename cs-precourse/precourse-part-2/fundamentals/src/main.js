@@ -4,7 +4,7 @@
 // shallowClone[0] === users[0] → true
 function clone(value) {
 	// CODE HERE
-
+	return Object.assign(value);
 }
 
 
@@ -15,7 +15,18 @@ function clone(value) {
 // size({a: 1, b: 2}); → 2
 function size(collection) {
 	// CODE HERE
-	
+	if (Array.isArray(collection)) {
+		return collection.length;
+	} else {
+		var size = 0;
+
+		for (var prop in collection) {
+			if (collection.hasOwnProperty(prop)) {
+				size++;
+			}
+		}
+		return size;
+	}
 }
 
 
@@ -25,7 +36,7 @@ function size(collection) {
 // first([]); → undefined
 function first(array) {
 	// CODE HERE
-	
+	return array[0];
 }
 
 
@@ -37,7 +48,11 @@ function first(array) {
 // drop([1, 2, 3], 0); → [1, 2, 3]
 function drop(array, n) {
 	// CODE HERE
-	
+	if (n === undefined) {
+		return array.slice(1);
+	} 
+
+	return array.slice(n);
 }
 
 
@@ -49,7 +64,11 @@ function drop(array, n) {
 // take([1, 2, 3], 0); → []
 function take(array, n) {
 	// CODE HERE
-	
+	if (n === undefined) {
+		return array.splice(0, 1);
+	}
+
+	return array.splice(0, n);
 }
 
 
@@ -57,7 +76,13 @@ function take(array, n) {
 // pluck([{user: 'Bob', age: 20},{user: 'Sam', age: 25}], 'user'); → ['Bob','Sam']
 function pluck(array, key) {
 	// CODE HERE
-	
+	var newArr = [];
+
+	for (var i = 0; i < array.length; i++) {
+		newArr.push(array[i][key]);
+	}
+
+	return newArr;
 }
 
 
@@ -68,7 +93,15 @@ function pluck(array, key) {
 // BONUS: solve with reduce
 function extend(destination) {
 	// CODE HERE
-	
+	var source = arguments[0];
+
+	for (var i = 0; i < arguments.length; i++) {
+		for (var prop in arguments[i]) {
+			source[prop] = arguments[i][prop];
+		}
+	}
+
+	return source;
 }
 
 
@@ -86,21 +119,34 @@ applyAndEmpty(2, puzzlers); → 3
 */
 function applyAndEmpty(input, queue) {
 	// CODE HERE
-	
+	for (var i = 0; i < queue.length; i++) {
+		input = queue[i](input);
+	}
+
+	return input;
 }
 
 
 // Returns a function that when called, will check if it has already computed
 // the result for the given argument and return that value instead if possible.
 function memoize(func) {
-	// CODE HERE
-	
+	var obj = {};
+    
+  return function(arg){
+    if(!obj[arg]){
+      obj[arg] = func(arg);
+    }
+
+    return obj[arg];
+  }
 }
 
 
 // Invokes func after wait milliseconds. Any additional arguments are provided
 // to func when it is invoked.
-function delay(func, wait) {
+function delay(func, wait, arg1, arg2) { 
 	// CODE HERE
-	
+	return setTimeout(function() {
+	  return func(arg1, arg2)
+	}, wait);
 }
