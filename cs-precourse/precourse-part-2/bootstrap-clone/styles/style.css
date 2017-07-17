@@ -1,0 +1,245 @@
+@import url('/normalize.css');
+
+/*
+==========================
+			Global Styles
+==========================
+*/
+
+body {
+	font-size: 14px;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+==========================
+			Header Styles
+==========================
+*/
+
+header > section {
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 17px 0;
+	background-color: #0275d8;
+}
+
+header > section:hover {
+	cursor: pointer;
+	background-color: #0269c2;
+}
+
+header > nav {
+	color: #563d7c; 
+	background-color: #fff;
+	border-bottom: 1px solid #333333;
+}
+
+header > nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+header > nav ul li {
+	display: inline-block;
+	padding: 16px 12.8px;
+}
+
+header > nav a {
+	color: #401f7c;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+header > nav a:hover {
+	cursor: pointer;
+}
+
+header > nav ul li:first-child {
+	height: 16px;
+	font-size: 18px;
+	line-height: 15px;
+	margin-left: 140px;
+}
+
+header > nav ul li:nth-child(6) {
+	margin-right: 295px;
+}
+
+header > nav ul li:hover {
+	cursor: pointer;
+	background-color: #f9f9f9;
+}
+
+header > nav ul li:first-child:hover {
+	cursor: pointer;
+	background-color: #fff;
+}
+
+/*
+==========================
+				Main Styles
+==========================
+*/
+
+#download {
+	color: #fff;
+	height: 725px;
+	background-color: #563d7c;
+	padding-top: .1px;
+}
+
+#download h1 {
+	width: 142px;
+	height: 142px;
+	font-size: 108px;
+	font-weight: 500;
+	line-height: 140px;
+	border-radius: 20px;
+	text-align: center;	
+	vertical-align: middle;
+	border: 1px solid #cdbfe3;
+	margin: 80px auto 30px auto;
+}
+
+#download h2 {
+	width: 65%;
+	margin: 0 auto;
+	font-size: 30px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 42px;
+}
+
+.getbootstrap {
+	width: 244px;
+	margin: 0 auto;
+	border-radius: 5px;
+	border: 1px solid #cdbfe3;
+	margin: 30px auto 17px auto;
+}
+
+.getbootstrap a {
+	color: #fff;
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	padding: 16px 0 17px 0;
+}
+
+.getbootstrap a:hover {
+	color: #563d7c;
+	background-color: #fff;
+}
+
+#download p {
+	color: #9783b9;
+	text-align: center;
+}
+
+#design {
+	height: 875px;
+	color: #555555;
+	background-color: #fff;
+	margin: 130px auto 100px auto;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#design h1 {
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+#design p {
+	max-width: 62%;
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 29px;
+	padding-bottom: 45px;
+	margin: 0 auto 20px auto;	
+}
+
+#design h1, 
+#design p, 
+#design dl {
+	text-align: center;
+}
+
+#design h1, 
+dt {
+	color: #333333;
+}
+
+.features {
+	max-width: 84.5%;
+	margin: 0 auto;
+}
+
+.features:before {
+	border-top: 1px solid black;
+}
+
+dl {
+	width: 33%;
+	display: inline-block;	
+	vertical-align: middle;
+}
+
+dt {
+	font-size: 24px;
+	font-weight: 400;
+	margin-left: 30px;
+}
+
+dt:last-of-type {
+	margin-bottom: 5px;
+}
+
+dt img {
+	max-width: 100%;
+	margin-left: -15px;
+	margin-bottom: 25px;
+}
+
+dd {
+	color: #555555;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.btn  {
+	width: 225px;
+	margin: 0 auto;
+	border-radius: 5px;
+	border: 1px solid #563d7c;
+	margin: 0 auto;
+}
+
+.btn a {
+	color: #563d7c;
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	padding: 12px 0 13px 0;
+}
+
+.btn a:hover {
+	color: #fff;
+	background-color: #563d7c;
+}
+
+
+
+
+
