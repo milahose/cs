@@ -70,11 +70,11 @@ header > nav ul li:first-child {
 	height: 16px;
 	font-size: 18px;
 	line-height: 15px;
-	margin-left: 140px;
+	padding-left: 10%;
 }
 
 header > nav ul li:nth-child(6) {
-	margin-right: 15%;
+	padding-right: 22%;
 }
 
 header > nav ul li:hover {
@@ -377,5 +377,3 @@ footer a:hover {
 	color: #fff;
 	text-decoration: underline;
 }
-
-
