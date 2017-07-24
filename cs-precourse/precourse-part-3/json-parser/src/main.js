@@ -12,5 +12,7 @@
 
 function JSONParser(string) {
 	//CODE HERE
-	
+	var obj = JSON.parse(string);
+
+	return obj;
 }
