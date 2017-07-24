@@ -7,7 +7,7 @@ Some of the tests will be highlighted blue. This means they are pending and the 
 
 Often data is stored on the server in a different format from what is readable by the client side. [JSON](http://www.w3schools.com/js/js_json.asp), or JavaScript Object Notation, is a standard format for passing data between various components of the web. The following is an example of a JSON object:
 ```
-{
+"{
   "firstName": "John",
   "lastName": "Smith",
   "isAlive": true,
@@ -30,7 +30,7 @@ Often data is stored on the server in a different format from what is readable b
   ],
   "children": [],
   "spouse": null
-}
+}"
 ```
 A JSON Parser is used to transform the data from the readable JSON format (which is a string) into a structure JavaScript object.
 
