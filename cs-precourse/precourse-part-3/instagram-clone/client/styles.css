@@ -139,3 +139,67 @@ footer > p {
 	color: #999;
 	display: inline-block;
 }
+
+
+/*
+=====================
+		Feed Styles
+=====================
+*/
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-top: 10px;
+	background-color: #125688;
+}
+
+header ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 120px;
+}
+
+header ul li {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header img {
+	width: 40px;
+	display: inline-block;
+}
+
+header li:nth-child(2) {
+	text-align: center;
+	padding-top: 7px;
+	vertical-align: bottom;
+}
+
+.ig {
+	width: 150px;
+	padding-left: 380px;
+}
+
+header li:nth-child(1) {
+	vertical-align: top;
+	padding: 8px 0 0 70px;
+}
+
+header li:nth-child(3) {
+	float: right;
+	padding: 5px 80px 0 0;
+}
+
+header a {
+	color: #fff;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+header span {
+	padding-left: 7px;
+	vertical-align: 13px;
+}

