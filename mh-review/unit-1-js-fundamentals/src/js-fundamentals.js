@@ -85,7 +85,16 @@ function isNull(value) {
  * DO NOT USE THE BUILT-IN Object.assign FUNCTION
  */
 function clone(value) {
+	var obj = {};
 
+	if (Array.isArray(value)) {
+		return value.slice(0);
+	} else {
+		for (var prop in value) {
+			obj[prop] = value[prop];
+		}
+		return obj;
+	}
 }
 
 /**
@@ -107,7 +116,12 @@ function size(collection) {
  * indexOf([11,22,33], 5); → -1
  */
 function indexOf(array, value) {
-
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] === value) {
+			return i;
+		}
+	}
+	return -1; 
 }
 
 /**
@@ -118,7 +132,7 @@ function indexOf(array, value) {
  * drop([1, 2, 3], 0); → [1, 2, 3]
  */
 function drop(array, n) {
-
+	
 }
 
 /**
@@ -129,7 +143,7 @@ function drop(array, n) {
  * dropRight([1, 2, 3], 0); → [1, 2, 3]
  */
 function dropRight(array, n) {
-
+	return array.slice(0, -n);
 }
 
 /**
@@ -237,7 +251,7 @@ function pluck(array, key) {
  * trim('   hello world '); -> 'hello world'
  */
 function trim(string) {
-
+	return string.trim();
 }
 
 /**
@@ -254,7 +268,13 @@ function trim(string) {
  * },1); → 4
  */
 function reduce(array, callback, start) {
+	var acc = start || 0;;
 
+	for (var i = 0; i < array.length; i++) {
+		acc = callback(acc, array[i]);
+	}
+
+	return acc;
 }
 
 /**
@@ -262,7 +282,7 @@ function reduce(array, callback, start) {
  * flatten([1, [2, 3, [4]]]); → [1, 2, 3, [4]]
  */
 function flatten(array) {
-
+	return [].concat.apply([], array);
 }
 
 /**
@@ -309,7 +329,20 @@ function isString(value) {
  * deepClone[0].user === users[0].user → true
  */
 function cloneDeep(value) {
+	// JSON.parse(JSON.stringify(value));
+	var clone;
 
+	if (typeof value !== "object") {
+		return value;
+	}
+
+	clone = value.constructor();
+
+	Object.keys(value).forEach(function(key) {
+		clone[key] = cloneDeep(value[key]);
+	});
+
+	return clone;
 }
 
 /**
@@ -356,7 +389,16 @@ function delay(func, wait) {
  * (additional calls to func within the wait should not be invoked or queued).
  */
 function throttle(func, wait) {
+	var lastCall = 0;
 
+	return function(...myArgs) {
+		var now = Date.now();
+
+		if (now - lastCall >= wait) {
+			lastCall = now;
+			return func(...myArgs);
+		}
+	}
 }
 
 /**
