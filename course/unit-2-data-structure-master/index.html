@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Data Structures</title>
+  <link rel="stylesheet" href="test/lib/mocha/mocha.css" />
+</head>
+<script src="test/lib/scroll.js"></script>
+<body onload="loadScroll()" onunload="saveScroll()">
+  <div id="mocha"></div>
+  <script src="test/lib/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="test/lib/expect/index.js"></script>
+  <script src="src/Stack.js"></script>
+  <script src="test/stack-tests.js"></script>
+  <script src="src/Queue.js"></script>
+  <script src="test/queue-tests.js"></script>
+  <script src="src/LinkedList.js"></script>
+  <script src="test/linked-list-tests.js"></script>
+  <script src="src/HashTable.js"></script>
+  <script src="test/hash-table-tests.js"></script>
+  <script src="src/BinarySearchTree.js"></script>
+  <script src="test/binary-search-tree-tests.js"></script>
+  <script src="src/extension/Set.js"></script>
+  <script src="test/set-tests.js"></script>
+  <script src="src/extension/Tree.js"></script>
+  <script src="test/tree-tests.js"></script>
+  <script src="src/extension/Graph.js"></script>
+  <script src="test/graph-tests.js"></script>
+  <script src="src/extension/Trie.js"></script>
+  <script src="test/trie-tests.js"></script>
+  <script>
+    mocha.globals();
+    mocha.run();
+  </script>
+</body>
+</html>

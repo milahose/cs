@@ -1,0 +1,29 @@
+{
+  "name": "precourse-assessment",
+  "version": "1.0.0",
+  "description": "Precourse Assessment",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "get-test-utils": "node test/get-test-utils.js",
+    "merge": "node test/merge.js",
+    "update-package": "node test/update-package.js",
+    "lint": "node test/lint.js main.js",
+    "test": "node test/remote-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodesmithLLC/precourse-assessment.git"
+  },
+  "author": "David Petri <petridw@gmail.com> (davidpetri.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodesmithLLC/precourse-assessment/issues"
+  },
+  "homepage": "https://github.com/CodesmithLLC/precourse-assessment#readme",
+  "dependencies": {
+    "request": "^2.69.0"
+  }
+}
