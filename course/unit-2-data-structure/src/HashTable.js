@@ -9,17 +9,19 @@ function HashTable() {
 // stores a value in the storage array
 // hint: use the hash function to determine where in the array to store the value
 HashTable.prototype.set = function(key, value) {
-
+  this.storage[key] = value;
 };
 
 // return a previously stored value
 HashTable.prototype.get = function(key) {
-
+  return this.storage[key];
 };
 
 // returns and removes a key from the hash table
 HashTable.prototype.remove = function(key) {
-
+  var deletedValue = this.storage[key];
+  delete this.storage[key];
+  return deletedValue;
 };
 
 // returns a number between 0 and size that is unique* and generated from the the inputted string
