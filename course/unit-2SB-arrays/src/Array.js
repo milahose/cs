@@ -3,12 +3,20 @@
 function Erray() {
   this.contents = {};
   this.length = 0;
-  this.count = 0;
 }
 
 Erray.prototype.push = function(val) {
-	this.contents[this.length] = val;
-	this.length++;
+  if (arguments.length === 1) {
+    this.contents[this.length] = val;
+	  this.length++;
+  } else if (arguments.length > 1) {
+    var args = Array.prototype.slice.call(arguments);
+    
+    for (var i = 0; i < args.length; i++) {
+      this.contents[i] = args[i];
+      this.length++;
+    }
+  }
 }
 
 Erray.prototype.pop = function(val) {
