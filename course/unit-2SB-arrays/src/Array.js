@@ -35,10 +35,19 @@ Erray.prototype.unshift = function(val) {
 }
 
 Erray.prototype.unshift = function(val) {
-  for (var i = 0; i < this.length; i++) {
-    this.contents[i] = this.contents[i++]; 
+  if (this.length === 0) {
+    this.contents[this.length] = val;
+    this.length++;
+    return this.length;
   }
   
+  this.length++;
+  for (var i = this.length; i > 0; i--) {
+    this.contents[i] = this.contents[i - 1];
+    this.contents[i - 1] = undefined;
+  }
+  
+  delete this.contents[this.length]
   this.contents[0] = val;
   return this.contents;
 }
