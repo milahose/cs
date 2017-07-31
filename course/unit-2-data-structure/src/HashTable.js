@@ -35,3 +35,6 @@ function hashCode(string, size){
   }
   return Math.abs(hash) % size ;
 }
+
+
+
