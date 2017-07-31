@@ -33,22 +33,6 @@ Erray.prototype.pop = function(val) {
 }
 
 Erray.prototype.unshift = function(val) {
-  for (var i = 0; i < this.length; i++) {
-    this.contents[i] = this.contents[i++]; 
-  }
-  
-  this.contents[0] = val;
-  this.length++;
-  return this.contents;
-}
-
-Erray.prototype.unshift = function(val) {
-  if (this.length === 0) {
-    this.contents[this.length] = val;
-    this.length++;
-    return this.length;
-  }
-  
   this.length++;
   for (var i = this.length; i > 0; i--) {
     this.contents[i] = this.contents[i - 1];
