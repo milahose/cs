@@ -33,15 +33,30 @@ Erray.prototype.pop = function(val) {
 }
 
 Erray.prototype.unshift = function(val) {
-  this.length++;
-  for (var i = this.length; i > 0; i--) {
-    this.contents[i] = this.contents[i - 1];
-    this.contents[i - 1] = undefined;
-  }
+  if (arguments.length === 1) {
+    this.length++;
   
-  delete this.contents[this.length]
-  this.contents[0] = val;
-  return this.contents;
+    for (var i = this.length; i > 0; i--) {
+      this.contents[i] = this.contents[i - 1];
+      this.contents[i - 1] = undefined;
+    }
+    
+    delete this.contents[this.length]
+    this.contents[0] = val;
+    return this.contents;
+    
+  } else if (arguments.length > 1) {
+    var args = Array.prototype.slice.call(arguments);
+    this.length = args.length;
+     
+    for (var i = args.length; i > 0; i--) {
+      this.contents[i] = args[i];
+    }
+    
+    delete this.contents[this.length]
+    this.contents[0] = val;
+    return this.contents;
+  }
 }
 
 Erray.prototype.shift = function() {
