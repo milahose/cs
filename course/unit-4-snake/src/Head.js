@@ -9,11 +9,14 @@ class Head {
     this.node.css({ top: 0, left: 0 });
     setTimeout(this.move.bind(this), this.SPEED);
   }
+
   // same as Head.prototype.move = function() {...}
   move() {
     var direction = this.currentDirection;
-    var position = this.node.position();
-
+    let position = this.node.position();
+    console.log(position.top);
+    console.log(apple.position.top);
+    
     if (direction === 'right') {
       position.left += 50;
     } else if (direction === 'left') {
@@ -25,8 +28,18 @@ class Head {
     }
 
     this.node.offset(position);
+
+    if (position.top === apple.position.top && position.left === apple.position.left) {
+      console.log("apple success");
+      console.log("apple position top", apple.position.top);
+      console.log("apple position left", apple.position.left);
+      console.log("top", position.top);
+
+      apple.appleMove()
+    }
+
     if ((position.left < 700 && position.left > 0) && (position.top > 0 && position.top < 700)) {
       setTimeout(this.move.bind(this), this.SPEED);
-    } 
+    }
   }
 }
