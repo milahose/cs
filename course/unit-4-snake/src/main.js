@@ -1,7 +1,9 @@
 $(document).ready(function() {
   head = new Head($('#board'));
   apple = new Apple($('#board'));
-  
+
+
+
   $('body').on('keydown', function(e) {
     if (e.keyCode === 37) {
       console.log('pressed left');
