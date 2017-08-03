@@ -1,0 +1,55 @@
+#chatbox {
+    width: 600px;
+    height: 650px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    margin: 20px auto 2px auto;
+    padding: 20px;
+    overflow: auto;
+}
+
+.username, .message {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+form {
+    display: block;
+    width: 643px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    display: inline-block;
+    width: 572px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+input[type="text"]:focus {
+    outline: 3px solid grey;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    background-color: lightblue;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 0 auto;
+    color: #484848;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgba(0,255,255,1);
+}
