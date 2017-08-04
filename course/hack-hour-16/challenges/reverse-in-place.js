@@ -32,3 +32,23 @@ function reverseInPlace(array) {
 }
 
 module.exports = reverseInPlace;
+
+
+// FIRST WORKING SOLUTION
+// function reverseInPlace(array) {
+//  var placeholder = [];
+	
+// 	if (array.length === 0 || array === undefined) {
+// 		return [];
+// 	}
+  		  
+//  for (let i = array.length - 1; i >= 0; i--) {
+//  		placeholder.push(array[i]);
+//  	}
+
+//  	for (let i = 0; i < placeholder.length; i++) {
+//  		array[i] = placeholder[i];
+//  	}
+
+//  	return array;
+// }
