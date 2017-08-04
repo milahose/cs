@@ -21,7 +21,7 @@ function reverseInPlace(array) {
 	}
 
 	for (let i = 0; i < placeholder.length; i++) {
-		array[i] = placeholder[i];
+		array.splice(i, 1, placeholder[i]);
 	}
 
 	return array;
