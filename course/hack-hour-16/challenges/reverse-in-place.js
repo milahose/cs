@@ -33,8 +33,7 @@ function reverseInPlace(array) {
 
 module.exports = reverseInPlace;
 
-
-// FIRST WORKING SOLUTION
+// ORIGINAL WORKING SOLUTION
 // function reverseInPlace(array) {
 //  var placeholder = [];
 	
