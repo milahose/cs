@@ -1,18 +1,37 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Calendar</title>
+  <title>Chatroom</title>
+  <link href="chatroom.css" rel="stylesheet">
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-  <div id="test"></div>
 
 
 </body>
 <script src="./node_modules/expect/umd/expect.min.js"></script>
 <script src="./node_modules/mocha/mocha.js"></script>
 <script src="./test/polyfill.js"></script>
-<script src='./client/main.js'></script>
+<script src='./client/chatroom.js'></script>
+<div id="chatbox"></div>
+<div id="inputContainer">
+    <input type="text" id="messageText" name="messageText" />
+    <input type="submit" id="submit" name="submit" />
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   // If called from Mocha Phantom-JS on the command line then add the test scripts
