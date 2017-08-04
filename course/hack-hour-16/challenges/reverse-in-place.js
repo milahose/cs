@@ -15,6 +15,10 @@
 
 function reverseInPlace(array) {
 	var placeholder = [];
+	
+	if (array.length === 0 || array === undefined) {
+		return [];
+	}
 
 	for (let i = array.length - 1; i >= 0; i--) {
 		placeholder.push(array[i]);
