@@ -1,0 +1,20 @@
+{
+  "name": "unit-6sb-simon",
+  "version": "1.0.0",
+  "description": "Intro to ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python -m SimpleHTTPServer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodesmithLLC/unit-6SB-simon.git"
+  },
+  "author": "Andrew Carlson <acarl005@g.ucla.edu> (https://github.com/acarl005)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodesmithLLC/unit-6SB-simon/issues"
+  },
+  "homepage": "https://github.com/CodesmithLLC/unit-6SB-simon#readme"
+}
