@@ -67,3 +67,6 @@ $(document).ready(function() {
     setTimeout(refreshFeed, 1000);
 
 });
+
+
+console.log("hello world")

@@ -11,4 +11,12 @@ class App extends Component {
     }
 }
 
+class Box extends Component {
+	render(prop) {
+		return (
+			<button>X</button>
+		)
+	}
+}
+
 render(<App />, document.getElementById('content'));
