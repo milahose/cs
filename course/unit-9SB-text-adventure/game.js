@@ -5,4 +5,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 const terminal = rl.output;
-terminal.write('hello world');
+terminal.write('Would you like to play?\n');
+const deferred = $.Deferred();
+
+
+
+// deferred.done(function(value) {
+//    prompt(value);
+// });

@@ -16,7 +16,7 @@ describe('asks questions to the user', () => {
       done();
     });
   });
-  xit('lets a user cancel a game by typing \'no\' at prompt', (done) => {
+  it('lets a user cancel a game by typing \'no\' at prompt', (done) => {
     proc.stdout.once('data', (dataOutput) => {
       proc.stdin.write('no\r');
       proc.stdout.on('data', (output) => {
