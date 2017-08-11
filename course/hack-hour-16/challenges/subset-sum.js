@@ -8,8 +8,25 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target) {
+ // Iterate through array
+ // For each element, if the value is greater than target, ignore it
+ // Else, check to so see if adding the current element to count equals target
+ // If not, keep checking
 
+function subsetSum(array, target) {
+	var sum;
+	var count;
+	for (let i = 0; i < array.length; i++) {
+		sum = array[i];
+
+		for (let i = 0; i < array.length; i++) {
+			if (array[i] < target) {
+				if (sum + array[i] <= target) {
+					sum += array[i];
+				}
+			}
+		}
+	}
 }
 
-module.exports = subsetSum;
+module.exports = subsearray[i] < count
