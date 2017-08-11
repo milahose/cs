@@ -10,6 +10,6 @@ const deferred = $.Deferred();
 
 
 
-// deferred.done(function(value) {
-//    prompt(value);
-// });
+deferred.done(function() {
+   document.write('Would you like to play?\n');
+});
