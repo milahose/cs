@@ -1,0 +1,20 @@
+{
+  "name": "week-3-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "merge": "node test/merge.js",
+    "get-test-utils": "node test/get-test-utils.js",
+    "update-package": "node test/update-package.js",
+    "start": "node server.js",
+    "lint": "node test/lint.js server.js",
+    "test": "node test/remote-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.1",
+    "request": "^2.69.0"
+  }
+}
