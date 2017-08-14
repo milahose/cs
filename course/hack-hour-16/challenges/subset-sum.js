@@ -15,7 +15,6 @@
 
 function subsetSum(array, target) {
 	var sum;
-	var count;
 	for (let i = 0; i < array.length; i++) {
 		sum = array[i];
 
