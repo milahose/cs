@@ -19,12 +19,9 @@ function matchWord(str) {
 		return true;
 	} 
 
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i] === str.match(/^[a-zA-Z\s]+$/)) {
-			firstWord += arr[i];
-		} else {
-			stack.push(firstWord);
-			firstWord = "";
+	for (var i = 0; i < str.length; i++) {
+		if (str[i].match(/[a-z]/).toLowerCase()) {
+			firstWord += str[i];
 		}
 	}
 
