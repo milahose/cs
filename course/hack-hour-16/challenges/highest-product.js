@@ -14,14 +14,15 @@ function highestProduct(array) {
 
 	for (let i = 0; i < array.length - 3; i++) {
 		current = array[i];
+		console.log(current * array[i + 1] * array[i + 2]);
 
-		while (count < 2) {
-			product = current * array[i + 1] * array[i + 2];
-			count++;
-		}
+		// while (count < 2) {
+		// 	product = current * array[i + 1] * array[i + 2];
+		// 	count++;
+		// }
 
-		possibilities.push(product);
-		count = 0;
+		// possibilities.push(product);
+		// count = 0;
 	}
 
 	return possibilities;

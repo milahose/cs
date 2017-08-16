@@ -1,0 +1,33 @@
+{
+  "name": "unit-10-databases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db": "node save-data/capture.js",
+    "test": "mocha test/index.js",
+    "test-server": "mocha test/server.js -t 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodesmithLLC/unit-10-databases.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodesmithLLC/unit-10-databases/issues"
+  },
+  "homepage": "https://github.com/CodesmithLLC/unit-10-databases#readme",
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "mocha": "^2.3.4",
+    "mongodb": "^2.0.47",
+    "mongoose": "^4.2.3",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.65.0",
+    "sequelize": "^3.13.0"
+  }
+}
