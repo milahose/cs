@@ -1,4 +1,3 @@
-
 const sessionController = require('./../session/sessionController');
 
 const cookieController = {};
@@ -12,9 +11,14 @@ cookieController.setSSIDCookie = setSSIDCookie;
 * @param res - http.ServerResponse
 * @param next - Callback with signature ([err])
 */
+	
 function setCookie(req, res, next) {
   //write code here
 
+  res.cookie('codesmith', 'hi', {httpOnly: false});
+  res.cookie('secret', Math.floor(Math.random() * 99));
+
+  next();
 }
 
 /**

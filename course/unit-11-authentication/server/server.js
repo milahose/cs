@@ -25,7 +25,8 @@ app.set('view engine', 'ejs');
 * in req.body
 */
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cookieParser());
+app.use(cookieController.setCookie);
 
 /**
 * --- Express Routes ---

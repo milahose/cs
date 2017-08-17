@@ -22,6 +22,22 @@ userController.getAllUsers = (next) => {
 userController.createUser = (req, res) => {
   // write code here
 
+  if (!req.body.username || !req.body.password) {
+  	res.render('signup', {error: 'error'});
+  } else {
+  	let newUser = new User({
+  		username: req.body.username, 
+  		password: req.body.password
+  	});
+
+  	newUser.save(function(err) {
+  		if (err) {
+  			throw err;
+  		}
+  	})
+
+  	res.end();
+  }
 };
 
 /**
@@ -34,6 +50,19 @@ userController.createUser = (req, res) => {
 */
 userController.verifyUser = (req, res) => {
   // write code here
+	User.findOne({username: req.body.username}, function(err, users){
+		if (err) throw err;
+
+    if (users === null) {
+    	res.redirect('/signup');
+    } else if (users.password === req.body.password){
+    	res.redirect('/secret');
+    } else {
+    	res.redirect('/signup');	
+    }
+  }); 
 };
 
 module.exports = userController;
+
+
