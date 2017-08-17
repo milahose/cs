@@ -1,4 +1,5 @@
 const messages = require('./../../data/messages');
+console.log(messages);
 
 module.exports = {
   getMessages: (request,response) => {
