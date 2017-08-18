@@ -5,12 +5,15 @@
  * BONUS: Do this in place
  */
 
+ 
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function zip(l1, l2) {
+	
 };
 
 module.exports = {Node: Node, zip: zip};
