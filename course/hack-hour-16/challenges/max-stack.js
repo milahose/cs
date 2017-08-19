@@ -8,6 +8,17 @@
 
 function Stack() {
   // body...
+  var stack = {
+  	push: function() {
+
+  	}
+  	pop: function() {
+  		
+  	}
+  	getMax: function() {
+  		
+  	}
+  }
 }
 
 module.exports = Stack;
