@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - '6.1.0'
+notifications:
+  email: false
+before_install:
+  - travis_retry nvm install 6.1.0
+  - if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then
+      npm install request;
+      npm run update-package;
+    fi
+env:
+  global:
+    - secure: "D5cIpDYWz+O0cc4LVXpHR7Frc4YQJTE3dsgC0rGoB2uzkW5GXMklsXBV231iKgQpCt5cg/zA8ae3bptZgbASYf7IT9v0+xmy4CmWUf+BNgmRwnOyckgr4iWN4Zh7OhYawf5KEXwhO6/UgzkG64PWb/9lRAElOaqGfMgAZvlV81FKBzil4vaNonqpc9npYcQkzvz1pVBB2XSrcA19GoqG8p+06FHDHpWZQJvfdelNgkFQhi8N5vyLtnn9OVKPLk+lh8dQjE5g1viqBlOoL7DqIz3T0MsLdx6r1wSDczwQ3gYk+TUm7tkDgZJTpWx93KII1abylSYFfv2GZ3KfNQISlM3vPxBnh/iZt3fFqxgBne4th+24R9PQQ3rRAvuttmVCFMKL0QTY5rEKkGiZvhV9ZLo67lieTo070zkP50u9lirv4vixQqcICMLMKj98bgH3R0uLREVcScORWgQrGPG2c61+nPdW/gm+dmxDntJ7+4Wd4cwNKmqxFnucBzWdSycNBsKS7z9BdbEjcFiz2HUVZb/h8pqbXUQ79osQyBW6P2N6do6Rwtdpw2mIzFA7LBVGqAUuwNagOyEIe6+WBl3OwEyXwfunvazqtouHUnPq4/YSsgZkeke0PBcUJJd0VBHnC8iZjBQ+d86IZwCjFczb3McxwCuzIC0NpGkRhM28X6w="
+    - secure: "JalohACLSuhZslEz39QUunXCqqqVRP0J90GNLVh0CdJAQFUWkPS0OZhDieCkjGQIz8XpwaTsjOQRSONAZMb16qUjbXKdyRrZ8O0xkSULrz2xjFOAQ23pd6xfU1LxgosFyG/D+jkuotaZydLCz0K0N1rhh6jTlzLl8WvGDKUjpExUd/HSXU10mmM2zjYYxBRwyEHZk1jhXCa+HrMmY6x+l2cbfljLP/eJ7OOc94IR/3Am06wBQEtwRBq3a6FjOw7lnl4yd+FMU5OPRB4TNQMkI5dlIxloLoB3aiKp7r3DHudnWnzGRkYFSrJa4xk8qGdGaIbiSGGKhCq0a3zexgpBpGNSHFzxWMG/RHXFiG0aE/1TPF+ohDpce/NOz7JX6kYLeHR0i8eSIPeTwKhqd9puu3mb9A7du9846aOeukn3/ttcsNUBQ9gscsqjOthdl5+Ao5n7stH3+o1jfrjfdIOh4HBQnDmrF+aTHMv3+6iYiJpw/UAJBCpose7gkQJPFVG697nxU2SXFzGNODJoDDBEi/HgCDfXxBipNwJ/xCVWz0AU9nVX8FS1uJe6Nwl0NrDG2XllG9wsRWuBzVAJlDpYd/Nm4zKWsS6osB2oxm3/cVrl8r31q81vav+jyODX2UF/uFjFEroAOmjzc2gmTlLx3e/pvXzzZ6HiT4yVtQD2o18="
+    - secure: "Ky9rPKVEDJEAZlTEEGx9zJAvPE9lkIBvHWghYuGCqtx48lnFAJvTB9PIipGAXHLYxE1oQ9dEAcMEdNzMeLPF0cBI3GIpeW8KsxsXUSS0QlB1uZBg7HKJegnDQtR3sVr32uWDNm+kN6ggTYKR81o30uB2BQoV6/7SLwLUen2huPTXe6HsZxqowucwLS6nIqN7/uzR3AM3RGg6nkXY8Cqky+dcI1ovUv19Tbsly15ZIqL5s+muO11ghkj0qFn3hxk4ps7CgFjKhqlmoFkN1klsVDMDZEJRaBaI9s8AxAVcKi/UzIzap+AbY39ZC2oUS6HzDSnDQ2eyK//4O0eUjI4Ktjl84UenO0IeuGpQf55Ut3v/pMorBLGdwJuoNsaou1B7XCMZIgNvSExXfKPpIsqqoHkxnHQ/d1Ibw825JeSTFwDkMYaWc3Hnfnn8l427i110jdv9ttQjp2wyNJyH3T+uaRhM3qXz33S9Gom9VMiJZzV8T8hgaNd0kj/15bNJQ23PluylqV4tPoeN/G0p0DEeIKhgQ04nq7dnUnGvbzZA+US8j60+6lZSFT7oaO0TwIhyGQxZ5UvZxFjSKocFStvgp9YvH4UpqPgHtv/+BvgwjEX2/AW9+Xua+qiyD73i1dbipkrUwqVLnHJ+JRRWauZcIA0IQ1nZMponiZIVeGaC8dU="
+script:
+  - if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then
+      npm run get-test-utils && npm run test ; npm run lint ; npm run report;
+    else
+      npm run merge;
+    fi

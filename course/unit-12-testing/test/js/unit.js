@@ -38,6 +38,7 @@ describe('db unit tests', () => {
     // TODO: Finish unit testing the create function
 
     xit('game has unique ID field added', () => {
+
     });
 
     xit('adding a second game does not overwrite first game', () => {
@@ -64,7 +65,7 @@ describe('db unit tests', () => {
     xit('returns list of all games from the json file', () => {
     });
 
-    xit('works of the list of games is empty', () => {
+    xit('works of the list of games is empty', () => { 
     });
   });
 

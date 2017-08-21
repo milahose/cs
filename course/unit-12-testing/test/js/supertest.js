@@ -27,13 +27,15 @@ describe('Route integration', () => {
 
   describe('/games', () => {
     describe('GET', () => {
-      xit('response with 200 status and application/json content type', done => {
+      it('responds with 200 status and application/json content type', done => {
+        console.log();
       });
 
       xit('games from appropriate json file in server/db/ are in body of response', done => {
         // You'll need to inspect the body of the response and ensure it contains the games list.
         // Might need to read the games json file in first to make sure the games in the response
         // match the games in the database.
+      
       });
     });
 
@@ -48,7 +50,7 @@ describe('Route integration', () => {
 
       xit('responds to invalid request with 400 status and error message in body', done => {
         // This feature does not exist yet. Follow test-driven-development here! See description
-        // in readme.
+        // in readme. 
         // Hint: An invalid request is a POST request in which the POST body does not contain
         // a JSON object with a "winner" key, or if the body contains fields other than "winner"
       });
