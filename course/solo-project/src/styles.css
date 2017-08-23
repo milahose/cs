@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  font-family: sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.form-control {
+	display: block;
+	margin: 0 auto;
+	width: 600px;
+	height: 300px;
+	resize: none;
+	border: .5px solid grey;
+}
+
+.form-control[placeholder="Add blog here"] {
+	font-size: 15px;
+}
+
+.submit {
+	display: block;
+	width: 606px;
+	height: 30px;
+	margin: 0 auto;
+	font-weight: bold;
+	background-color: lightblue;
+}
+
+.btn-primary {
+	background-color: lightgreen;
+}
+
+.btn-danger {
+	color: #fff;
+	background-color: red;
+}
+
+.save {
+	background-color: lightgreen;
+}
+
+.note {
+	width: 1350px;
+	height: 50px;
+	resize: none;
+/*	font-size: 12px;*/
+	font-family: sans-serif;
+}
