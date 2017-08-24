@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 // FeedItem should consist of an image (src contained in the data from the AJAX request)
 class FeedItem extends Component {
