@@ -41,12 +41,12 @@ describe('LinkedList', () => {
 
 
   // remove x to activate test
-  xit('should have addToHead method', () => {
+  it('should have addToHead method', () => {
     expect(list.addToHead).to.be.a('function');
   });
 
   // remove x to activate test
-  xit('should add value to head', () => {
+  it('should add value to head', () => {
     list.push(0);
     list.push(1);
     list.push(2);
@@ -69,7 +69,7 @@ describe('LinkedList', () => {
     expect(list.head.next.next.next.next.next).to.eql(null);
   });
 
-  xit('the constructor should take a variable number of arguments. It will add each of the arguments to the list upon instantiation', () => {
+  it('the constructor should take a variable number of arguments. It will add each of the arguments to the list upon instantiation', () => {
     const newList = new LinkedList(5, 1, 2, 6, 8);
     expect(newList.head.value).to.eql(5);
     expect(newList.head.next.value).to.eql(1);

@@ -14,23 +14,14 @@ LinkedList.prototype.push = function(value) {
 		this.head = new Node(value);
 		this.tail = this.head;
 	} else {
-		this.tail.next = new Node(value);
-		this.tail = this.tail.next;
+
 	}
+
 };
 
 // returns true if value is present in the list
 LinkedList.prototype.contains = function(value) {
-	var current = this.head;
 
-	while (current) {
-		if (current.value === value) {
-			return true;
-		}
-		current = current.next;
-	}
-
-	return false;
 };
 
 // Bonus
