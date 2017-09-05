@@ -43,13 +43,13 @@ describe('Your server', () => {
       .expect(404,done);
   });
 
-  xit('should respond to GET requests for \'/style.css\' with 200', (done) => {
+  it('should respond to GET requests for \'/style.css\' with 200', (done) => {
     request
       .get('/style.css')
       .expect(200, done);
   });
 
-  xit('should respond to GET requests for \'/style.css\' with text/css', (done) => {
+  it('should respond to GET requests for \'/style.css\' with text/css', (done) => {
     request
       .get('/style.css')
       .set('Accept', 'text/css')
