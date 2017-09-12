@@ -26,8 +26,11 @@
  */
 
 function applyIt(func, args) {
-      
+  var argArray = Array.prototype.slice.call(arguments);
+  
 }
+
+
 
 module.exports = applyIt;
     
