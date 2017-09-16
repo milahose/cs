@@ -13,15 +13,17 @@
 function repeatNumbers(array) {
   var repeatedNum = 0;
 
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] === repeatedNum[i]) {
-      repeatedNum[i]++;
-    }
-    repeatedNum[i] = 1;
-    console.log(repeatedNum);
-  }
+  
 
-  return repeatedNum;
+  // for (let i = 1; i < array.length; i++) {
+  //   if (array[i] === repeatedNum[i]) {
+  //     repeatedNum[i]++;
+  //   }
+  //   repeatedNum[i] = 1;
+  //   console.log(repeatedNum);
+  // }
+
+  // return repeatedNum;
 }
 
 repeatNumbers([1, 2, 3, 4, 5, 6, 7, 8, 4]);
