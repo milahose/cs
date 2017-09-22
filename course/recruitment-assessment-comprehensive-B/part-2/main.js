@@ -3,26 +3,20 @@ function Stack() {
   this.length = 0;
 }
 
-Stack.prototype.push = function(value) {
-	this.storage[this.length] = value;
-  this.length++;
+Stack.prototype.push = function (value) {
+  this.contents[this.length++] = value;
 };
 
-Stack.prototype.pop = function() {
-	var deletedValue; 
-	if (this.length === 0) return undefined;
+Stack.prototype.pop = function () {
+  let result = this.contents[this.length - 1];
   this.length--;
-	deletedValue = this.storage[this.length];
-	delete this.storage[this.length];
-	return deletedValue;
+  return result;
 };
 
-Stack.prototype.forEach = function(callback) {
-	while(this.length) {
-		callback(this.storage[this.length]);
-		delete this.storage[this.length];
-		this.length--;
-	}
+Stack.prototype.forEach = function (callback) {
+  for (let i = 0; i < this.length; i++) {
+    callback(this[i]);
+  }
 };
 
 
@@ -31,17 +25,18 @@ function Queue() {
   this.stack2 = new Stack;
 }
 
-Queue.prototype.enqueue = function(value) {
-	this.storage[this.length] = value;
-	this.index++;
+Queue.prototype.enqueue = function (value) {
+  this.stack1.push(value);
 };
 
-Queue.prototype.dequeue = function() {
-	var toDelete = this.length - (this.length - 1);
-	delete this.storage[toDelete];
-	toDelete++;
-	return deletedValue;
-};
+Queue.prototype.dequeue = function () {
+  if (!this.stack2.length) {
+    for (let i = 0; i < this.stack1.length; i++) {
+      this.stack2.push(this.stack1.pop());
+    }
+  }
 
+  return this.stack2.pop();
+};
 
 module.exports = { Stack, Queue };

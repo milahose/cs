@@ -69,19 +69,21 @@ function keywordCount(obj, keyword) {
 // closestToTarget(myArr, flipEvens, -5) --> 6 (myArr[2])
 
 function closestToTarget(arr, callback, target) {
-  if(arr.length > 0){
-    let closest = arr[0];
-    let difference = Math.abs(target - arr[0]);
-    console.log(arr);
-    
-    arr.forEach((current) => {
-      if(Math.abs(target-callback(current)) < difference){
-        difference = Math.abs(target-callback(current));
-        closest = current;
+  let closest = Infinity;
+  let index = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let curr = callback(arr[i]);
+    let diff = target - curr;
+    if (diff >= 0) {
+      if (diff < closest) {
+        closest = diff;
+        index = i;
       }
-    });
-    return closest;
+    }
   }
+
+  return arr[index];
 }
 
 module.exports = { functionLocker, keywordCount, closestToTarget };
