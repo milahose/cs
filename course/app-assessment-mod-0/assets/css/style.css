@@ -11,9 +11,11 @@ body {
 
 .remove {
   display: inline-block;
+  padding-bottom: 15px;
   float: right;
-  width: 15px;
+  width: 25px;
   height: 15px;
+  cursor: pointer;
 }
 
 #signin {
