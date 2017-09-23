@@ -22,6 +22,6 @@ function postTask() {
 
 // Delete
 function deleteTask() {
-  console.log('inside deleteTask')
+  console.log('inside deleteTask');
 }
 

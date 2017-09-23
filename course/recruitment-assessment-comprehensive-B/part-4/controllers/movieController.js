@@ -20,7 +20,7 @@ module.exports = {
   displayMovies(req, res, next) {
     Movie.find({}, (err, movies) => {
       if (err) throw err;
-      res.send(movies)
+      res.send(movies);
     })
   }
 };
