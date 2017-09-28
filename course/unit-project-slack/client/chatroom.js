@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
     $('#submit').on('click', postMessage);
     let previousMessage;
     let storage;
