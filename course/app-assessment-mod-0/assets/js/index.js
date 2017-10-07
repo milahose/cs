@@ -1,7 +1,6 @@
 $(() => {
   $('#retrieve').on('click', getTasks);
   $('#task-button').on('click', postTask);
-  $('.remove').on('click', deleteTask);
 });
 
 function getTasks() {
@@ -17,11 +16,13 @@ function postTask() {
   console.log(task);
   $.post('http://localhost:3333/posttask', task, (task) => {
     $('#task-list').append('<li>' + task.item + '<button class="remove">X</button></li>');
+    $('.remove').on('click', deleteTask);
   });
 }
 
 // Delete
-function deleteTask() {
-  console.log('inside deleteTask');
+function deleteTask(event) {
+  console.log(event.target);
+  $(event.target).parent().remove();
 }
 
